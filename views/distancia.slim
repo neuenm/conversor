@@ -1,0 +1,51 @@
+form action="/solucion" method="post"
+  p
+    div class="ui center aligned segment" 
+      i class="huge Road icon"
+      h1 Conversor de Distancia
+  
+  p
+    div class="ui form"
+      div class="field"
+        h2 Valor a convertir
+        input type="text" name="valor"
+
+    SELECT class="ui fluid normal dropdown" NAME="unidadInicial"
+      OPTION VALUE="km" kilometros
+      OPTION VALUE="m" metros
+      OPTION VALUE="cm" centimetros
+      OPTION VALUE="mm" milimetros 
+      OPTION VALUE="inch" pulgada
+      OPTION VALUE="ft" pie
+      OPTION VALUE="yd" yarda
+      OPTION VALUE="mi" milla
+
+  
+
+  p
+    h2 A:
+    SELECT class="ui fluid search dropdown" NAME="unidadFinal"
+      OPTION VALUE="km" kilometros
+      OPTION VALUE="m" metros
+      OPTION VALUE="cm" centimetros
+      OPTION VALUE="mm" milimetros 
+      OPTION VALUE="inch" pulgada
+      OPTION VALUE="ft" pie
+      OPTION VALUE="yd" yarda
+      OPTION VALUE="mi" milla
+ 
+
+
+  p
+    input class="fluid ui button positive" type="submit" value="Converir"
+
+    
+
+  p  
+    div
+      h2 #{@valor} #{@unidadIni} son:
+    div class="column"
+      div class="ui huge horizontal statistic"
+        div class="value"
+          | #{@res}
+        div class="label" #{@unidadFin}

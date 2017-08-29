@@ -1,0 +1,40 @@
+form action="/solucion" method="post"
+  p
+    div class="ui center aligned segment" 
+      i class="huge Cube icon"
+      h1 Conversor de Peso
+  
+  p
+    div class="ui form"
+      div class="field"
+        h2 Valor a convertir
+        input type="text" name="valor"
+    SELECT class="ui fluid search dropdown" NAME="unidadInicial"
+      OPTION VALUE="mg" miligramos
+      OPTION VALUE="g" gramos
+      OPTION VALUE="kg" kilogramos
+      OPTION VALUE="t" toneladas 
+      OPTION VALUE="oz" onza
+      OPTION VALUE="lb" libra
+
+  p
+    h2 A:
+    SELECT class="ui fluid search dropdown" NAME="unidadFinal"
+      OPTION VALUE="mg" miligramos
+      OPTION VALUE="g" gramos
+      OPTION VALUE="kg" kilogramos
+      OPTION VALUE="t" toneladas 
+      OPTION VALUE="oz" onza
+      OPTION VALUE="lb" libra
+
+  p
+    input class="fluid ui button positive" type="submit" value="Converir"
+  
+    p  
+    div
+      h2 #{@valor} #{@unidadIni} son:
+    div class="column"
+      div class="ui huge horizontal statistic"
+        div class="value"
+          | #{@res}
+        div class="label" #{@unidadFin}
