@@ -25,13 +25,6 @@ post "/solucion" do
   @unidadFin= params[:unidadFinal].to_s
   @res= Q[(@valor),(@unidadIni)].want(@unidadFin)   
   @res=@res.value
-  if medidasDist.include? @unidadIni
-  	slim:distancia
-  elsif medidasTemp.include? @unidadIni
-  	slim:temperatura
-  elsif medidasPeso.include? @unidadIni
-  	slim:peso
-  else 
-  	p "error inesperado"
-  end
+  {resultado: @res, unidadIni: @unidadIni, unidadFin: @unidadFin, valor: @valor}.to_json
 end
+
